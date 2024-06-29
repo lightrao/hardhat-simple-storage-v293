@@ -4,25 +4,33 @@ A sample project used to illustrate how to configure and use Hardhat.
 
 ### Requirements
 
--   **nvm**
-    ```sh
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-    ```
--   **git**
-    You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
--   **Node.js**
-    You'll know you've installed Node.js correctly if you can run:
-    ```sh
-    node --version
-    ```
-    and get an output like: `vx.x.x`
--   **Yarn** (instead of npm)
-    You'll know you've installed Yarn correctly if you can run:
-    ```sh
-    yarn --version
-    ```
-    and get an output like: `x.x.x`
-    You might need to install it with npm or corepack.
+**nvm**
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+**git**
+You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+
+**Node.js**
+You'll know you've installed Node.js correctly if you can run:
+
+```sh
+node --version
+```
+
+and get an output like: `vx.x.x`
+
+**Yarn** (instead of npm)
+You'll know you've installed Yarn correctly if you can run:
+
+```sh
+yarn --version
+```
+
+and get an output like: `x.x.x`
+You might need to install it with npm or corepack.
 
 ### Quickstart
 
@@ -136,7 +144,7 @@ yarn add --dev prettier prettier-plugin-solidity
 
 12. create ./.prettierrc and ./.prettierignore
 
-13. 
+13.
 
 ### Usage
 
