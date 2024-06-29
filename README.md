@@ -144,7 +144,13 @@ yarn add --dev prettier prettier-plugin-solidity
 
 12. create ./.prettierrc and ./.prettierignore
 
-13.
+13. for use .env in hardhat.config.js file, run:
+
+```sh
+yarn add dotenv@14.2.0
+```
+
+14. update hardhat.config.js add `require("dotenv").config()`, so it can use var in .env file
 
 ### Usage
 
@@ -218,6 +224,10 @@ If you use MetaMask with a local network, every time you shut down your node, yo
 3. **Deploy**
     ```sh
     npx hardhat run scripts/deploy.js --network sepolia
+    ```
+    or
+    ```sh
+    yarn hardhat run scripts/deploy.js --network sepolia
     ```
 
 ### Verify on Etherscan
