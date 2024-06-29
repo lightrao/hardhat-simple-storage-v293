@@ -4,114 +4,139 @@ A sample project used to illustrate how to configure and use Hardhat.
 
 ### Requirements
 
-- **nvm**
-  ```sh
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-  ```
-- **git**
-  You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
-- **Node.js**
-  You'll know you've installed Node.js correctly if you can run:
-  ```sh
-  node --version
-  ```
-  and get an output like: `vx.x.x`
-- **Yarn** (instead of npm)
-  You'll know you've installed Yarn correctly if you can run:
-  ```sh
-  yarn --version
-  ```
-  and get an output like: `x.x.x`
-  You might need to install it with npm or corepack.
+-   **nvm**
+    ```sh
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    ```
+-   **git**
+    You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+-   **Node.js**
+    You'll know you've installed Node.js correctly if you can run:
+    ```sh
+    node --version
+    ```
+    and get an output like: `vx.x.x`
+-   **Yarn** (instead of npm)
+    You'll know you've installed Yarn correctly if you can run:
+    ```sh
+    yarn --version
+    ```
+    and get an output like: `x.x.x`
+    You might need to install it with npm or corepack.
 
 ### Quickstart
 
 1. Clone the project repository and navigate into it:
 
-   ```sh
-   git clone <repository_url>
-   cd <repository_directory>
-   ```
+```sh
+git clone <repository_url>
+cd <repository_directory>
+```
 
 2. Install the project dependencies:
 
-   ```sh
-   npm ci
-   ```
+```sh
+npm ci
+```
 
-   Or
+Or
 
-   ```sh
-   yarn install --frozen-lockfile
-   ```
+```sh
+yarn install --frozen-lockfile
+```
 
 3. Run Hardhat:
-   ```sh
-   npx hardhat
-   ```
-   Or
-   ```sh
-   yarn hardhat
-   ```
+
+```sh
+npx hardhat
+```
+
+Or
+
+```sh
+yarn hardhat
+```
 
 ### Create Project from Scratch
 
 1. Create a new project directory and navigate into it:
 
-   ```sh
-   mkdir <repository_directory>
-   cd <repository_directory>
-   ```
+```sh
+mkdir <repository_directory>
+cd <repository_directory>
+```
 
 2. Install and use the correct Node.js version:
 
-   ```sh
-   nvm ls
-   nvm install 16.20.2
-   nvm use 16.20.2
-   ```
+```sh
+nvm ls
+nvm install 16.20.2
+nvm use 16.20.2
+```
 
-   ```bash
-   npm install -g yarn
-   ```
+```bash
+npm install -g yarn
+```
 
 3. Initialize a new Node.js project:
 
-   ```sh
-   npm init -y
-   ```
+```sh
+npm init -y
+```
 
-   Or
+Or
 
-   ```sh
-   yarn init -y
-   ```
+```sh
+yarn init -y
+```
 
 4. Install Hardhat:
 
-   ```sh
-   npm install --save-dev hardhat@2.9.3
-   ```
+```sh
+npm install --save-dev hardhat@2.9.3
+```
 
-   Or
+Or
 
-   ```sh
-   yarn add --dev hardhat@2.9.3
-   ```
+```sh
+yarn add --dev hardhat@2.9.3
+```
 
 5. Run Hardhat:
 
-   ```sh
-   npx hardhat
-   ```
+```sh
+npx hardhat
+```
 
-   Or
+Or
 
-   ```sh
-   yarn hardhat
-   ```
+```sh
+yarn hardhat
+```
 
 6. Choose “Create a basic sample project”.
+
+7. Show hardhat info:
+
+```sh
+yarn hardhat
+```
+
+8. Create ./contracts/SimpleStrage.sol
+
+9. Set solidity verion in ./hardhat.config.js
+
+10. Create ./scripts/deploy.js
+
+11. run:
+
+```sh
+yarn add --dev prettier prettier-plugin-solidity
+```
+
+12. create ./.prettierrc and ./.prettierignore
+
+13. 
 
 ### Usage
 
@@ -173,19 +198,19 @@ If you use MetaMask with a local network, every time you shut down your node, yo
 
 1. **Setup Environment Variables**
 
-   You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+    You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
 
-   - `PRIVATE_KEY`: The private key of your account (like from MetaMask). NOTE: FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
-   - `SEPOLIA_RPC_URL`: This is the URL of the Sepolia testnet node you're working with. You can get setup with one for free from Alchemy.
+    - `PRIVATE_KEY`: The private key of your account (like from MetaMask). NOTE: FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
+    - `SEPOLIA_RPC_URL`: This is the URL of the Sepolia testnet node you're working with. You can get setup with one for free from Alchemy.
 
 2. **Get Testnet ETH**
 
-   Head over to [faucets.chain.link](https://faucets.chain.link) and get some testnet ETH. You should see the ETH show up in your MetaMask.
+    Head over to [faucets.chain.link](https://faucets.chain.link) and get some testnet ETH. You should see the ETH show up in your MetaMask.
 
 3. **Deploy**
-   ```sh
-   npx hardhat run scripts/deploy.js --network sepolia
-   ```
+    ```sh
+    npx hardhat run scripts/deploy.js --network sepolia
+    ```
 
 ### Verify on Etherscan
 
