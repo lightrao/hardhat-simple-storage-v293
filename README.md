@@ -152,6 +152,21 @@ yarn add dotenv@14.2.0
 
 14. update hardhat.config.js add `require("dotenv").config()`, so it can use var in .env file
 
+15. run:
+
+```sh
+yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0
+yarn add --dev @nomicfoundation/hardhat-verify@2.0.3
+yarn add --dev hardhat-gas-reporter@1.0.7
+yarn add --dev solidity-coverage@0.7.18
+```
+
+16. run:
+
+```sh
+yarn hardhat verify help
+```
+
 ### Usage
 
 #### Deploy
@@ -159,7 +174,7 @@ yarn add dotenv@14.2.0
 To deploy the contract, run:
 
 ```sh
-npx hardhat run scripts/deploy.js
+npx hardhat run scripts/deploy.js --network hardhat
 ```
 
 #### Testing
