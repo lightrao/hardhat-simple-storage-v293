@@ -2,7 +2,6 @@
 require("@nomiclabs/hardhat-waffle") // Plugin for integrating Waffle, a testing framework for Ethereum smart contracts
 require("hardhat-gas-reporter") // Plugin for generating gas usage reports
 require("./tasks/block-number") // Custom task definition for retrieving the current block number
-// require("@nomiclabs/hardhat-etherscan"); // Plugin for verifying contracts on Etherscan (commented out)
 require("dotenv").config() // Load environment variables from .env file
 require("solidity-coverage") // Plugin for generating test coverage reports for Solidity contracts
 require("@nomicfoundation/hardhat-verify") // Plugin for contract verification
@@ -28,7 +27,7 @@ module.exports = {
         sepolia: {
             // Configuration for the Sepolia testnet
             url: SEPOLIA_RPC_URL, // RPC URL for connecting to Sepolia
-            accounts: [PRIVATE_KEY], // Array of private keys for deploying contracts
+            accounts: PRIVATE_KEY !== "" ? [PRIVATE_KEY] : [], // Array of private keys for deploying contracts
             chainId: 11155111, // Chain ID for Sepolia
         },
         localhost: {
@@ -39,14 +38,24 @@ module.exports = {
         },
     },
     // Specify Solidity compiler version
-    solidity: "0.8.8",
+    solidity: {
+        version: "0.8.8",
+        settings: {
+            optimizer: {
+                enabled: true,
+                runs: 200,
+            },
+        },
+    },
     // Etherscan API key for contract verification
-    etherscan: {
-        apiKey: ETHERSCAN_API_KEY,
+    verify: {
+        etherscan: {
+            apiKey: ETHERSCAN_API_KEY,
+        },
     },
     // Configuration for gas reporter
     gasReporter: {
-        enabled: false, // Disable gas reporter by default
+        enabled: process.env.REPORT_GAS || false, // Enable gas reporter based on environment variable
         currency: "USD", // Report gas costs in USD
         outputFile: "gas-report.txt", // Output file for gas report
         noColors: true, // Disable colors in gas report
