@@ -157,7 +157,6 @@ yarn add dotenv@14.2.0
 ```sh
 yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0
 yarn add --dev @nomicfoundation/hardhat-verify@2.0.3
-yarn add --dev solidity-coverage@0.7.18
 ```
 
 16. run:
@@ -230,6 +229,24 @@ now run:
 
 ```sh
 yarn hardhat test
+```
+
+24. solidity coverage, run:
+
+```sh
+npm install --save-dev solidity-coverage@0.7.18
+```
+
+or
+
+```sh
+yarn add --dev solidity-coverage@0.7.18
+```
+
+then add `require("solidity-coverage")` into `hardhat.config.js`, run:
+
+```sh
+yarn hardhat coverage
 ```
 
 ### Usage
