@@ -157,7 +157,6 @@ yarn add dotenv@14.2.0
 ```sh
 yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0
 yarn add --dev @nomicfoundation/hardhat-verify@2.0.3
-yarn add --dev hardhat-gas-reporter@1.0.7
 yarn add --dev solidity-coverage@0.7.18
 ```
 
@@ -211,6 +210,26 @@ yarn hardhat clean
 ```sh
 yarn hardhat test
 yarn hardhat test --grep store
+```
+
+23. hardhat gas reporter, run:
+
+```sh
+yarn add --dev hardhat-gas-reporter@1.0.7
+```
+
+or
+
+```sh
+npm install hardhat-gas-reporter@1.0.7 --save-dev
+```
+
+add `require("hardhat-gas-reporter")` and `gasReporter` section in to `hardhat.config.js` file, here we need use coinmarketcap API key
+
+now run:
+
+```sh
+yarn hardhat test
 ```
 
 ### Usage
