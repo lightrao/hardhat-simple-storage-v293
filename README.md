@@ -179,6 +179,19 @@ yarn hardhat block-number --network sepolia
 
 note: use scripts is a good alternative to tasks
 
+19. spin up a node on the local network, run
+
+```sh
+yarn hardhat node
+```
+
+add the network into hardhat.config.js as `localhost`
+then we can run:
+
+```sh
+npx hardhat run scripts/deploy.js --network localhost
+```
+
 ### Usage
 
 #### Deploy
