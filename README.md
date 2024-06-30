@@ -200,6 +200,19 @@ yarn hardhat console --network localhost
 
 console can interact with different chain as scripts do
 
+21. for clean `artifacts` and `cache` folder, run:
+
+```sh
+yarn hardhat clean
+```
+
+22. creat ./test/test-deploy.js file, run:
+
+```sh
+yarn hardhat test
+yarn hardhat test --grep store
+```
+
 ### Usage
 
 #### Deploy
