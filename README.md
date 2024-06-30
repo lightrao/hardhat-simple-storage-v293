@@ -192,6 +192,14 @@ then we can run:
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
+20. use hardhat console, run:
+
+```sh
+yarn hardhat console --network localhost
+```
+
+console can interact with different chain as scripts do
+
 ### Usage
 
 #### Deploy

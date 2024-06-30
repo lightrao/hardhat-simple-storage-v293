@@ -27,6 +27,7 @@ module.exports = {
         },
         localhost: {
             url: "http://localhost:8545",
+            // accounts: "hardhat supply",
             chainId: 31337,
         },
     },
