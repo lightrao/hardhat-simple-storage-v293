@@ -11,9 +11,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 ```
 
 **git**
+
 You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
 
 **Node.js**
+
 You'll know you've installed Node.js correctly if you can run:
 
 ```sh
@@ -23,6 +25,7 @@ node --version
 and get an output like: `vx.x.x`
 
 **Yarn** (instead of npm)
+
 You'll know you've installed Yarn correctly if you can run:
 
 ```sh
@@ -36,218 +39,218 @@ You might need to install it with npm or corepack.
 
 1. Clone the project repository and navigate into it:
 
-```sh
-git clone <repository_url>
-cd <repository_directory>
-```
+    ```sh
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
 
 2. Install the project dependencies:
 
-```sh
-npm ci
-```
+    ```sh
+    npm ci
+    ```
 
-Or
+    Or
 
-```sh
-yarn install --frozen-lockfile
-```
+    ```sh
+    yarn install --frozen-lockfile
+    ```
 
 3. Run Hardhat:
 
-```sh
-npx hardhat
-```
+    ```sh
+    npx hardhat
+    ```
 
-Or
+    Or
 
-```sh
-yarn hardhat
-```
+    ```sh
+    yarn hardhat
+    ```
 
 ### Create Project from Scratch
 
 1. Create a new project directory and navigate into it:
 
-```sh
-mkdir <repository_directory>
-cd <repository_directory>
-```
+    ```sh
+    mkdir <repository_directory>
+    cd <repository_directory>
+    ```
 
 2. Install and use the correct Node.js version:
 
-```sh
-nvm ls
-nvm install 16.20.2
-nvm use 16.20.2
-```
+    ```sh
+    nvm ls
+    nvm install 16.20.2
+    nvm use 16.20.2
+    ```
 
-```bash
-npm install -g yarn
-```
+3. Install Yarn globally:
 
-3. Initialize a new Node.js project:
+    ```bash
+    npm install -g yarn
+    ```
 
-```sh
-npm init -y
-```
+4. Initialize a new Node.js project:
 
-Or
+    ```sh
+    npm init -y
+    ```
 
-```sh
-yarn init -y
-```
+    Or
 
-4. Install Hardhat:
+    ```sh
+    yarn init -y
+    ```
 
-```sh
-npm install --save-dev hardhat@2.9.3
-```
+5. Install Hardhat:
 
-Or
+    ```sh
+    npm install --save-dev hardhat@2.9.3
+    ```
 
-```sh
-yarn add --dev hardhat@2.9.3
-```
+    Or
 
-5. Run Hardhat:
+    ```sh
+    yarn add --dev hardhat@2.9.3
+    ```
 
-```sh
-npx hardhat
-```
+6. Run Hardhat:
 
-Or
+    ```sh
+    npx hardhat
+    ```
 
-```sh
-yarn hardhat
-```
+    Or
 
-6. Choose “Create a basic sample project”.
+    ```sh
+    yarn hardhat
+    ```
 
-7. Show hardhat info:
+7. Choose “Create a basic sample project”.
 
-```sh
-yarn hardhat
-```
+8. Show Hardhat info:
 
-8. Create ./contracts/SimpleStrage.sol
+    ```sh
+    yarn hardhat
+    ```
 
-9. Set solidity verion in ./hardhat.config.js
+9. Create `./contracts/SimpleStorage.sol`.
 
-10. Create ./scripts/deploy.js
+10. Set Solidity version in `./hardhat.config.js`.
 
-11. run:
+11. Create `./scripts/deploy.js`.
 
-```sh
-yarn add --dev prettier prettier-plugin-solidity
-```
+12. Run:
 
-12. create ./.prettierrc and ./.prettierignore
+    ```sh
+    yarn add --dev prettier prettier-plugin-solidity
+    ```
 
-13. for use .env in hardhat.config.js file, run:
+13. Create `.prettierrc` and `.prettierignore`.
 
-```sh
-yarn add dotenv@14.2.0
-```
+14. To use `.env` in `hardhat.config.js` file, run:
 
-14. update hardhat.config.js add `require("dotenv").config()`, so it can use var in .env file
+    ```sh
+    yarn add dotenv@14.2.0
+    ```
 
-15. add some hardhat task by running:
+15. Update `hardhat.config.js` to add `require("dotenv").config()`, so it can use variables in `.env` file.
 
-```sh
-yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0
-yarn add --dev @nomicfoundation/hardhat-verify@2.0.3
-```
+16. Add some Hardhat tasks by running:
 
-16. run:
+    ```sh
+    yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0 @nomicfoundation/hardhat-verify@2.0.3
+    ```
 
-```sh
-yarn hardhat verify help
-```
+17. Run:
 
-then we can see `verify` task need `verify` augument when use `run` to run the task
+    ```sh
+    yarn hardhat verify help
+    ```
 
-17. creat ./tasks/block-number.js as our custom task, then in `hardhat.config.js` require the task
+    You can see `verify` task needs `verify` argument when using `run` to run the task.
 
-18. run:
+18. Create `./tasks/block-number.js` as your custom task, then in `hardhat.config.js` require the task.
 
-```sh
-yarn hardhat block-number --network sepolia
-```
+19. Run:
 
-note: use scripts is a good alternative to tasks
+    ```sh
+    yarn hardhat block-number --network sepolia
+    ```
 
-19. spin up a node on the local network, run
+    Note: Using scripts is a good alternative to tasks.
 
-```sh
-yarn hardhat node
-```
+20. To spin up a node on the local network, run:
 
-add the network into hardhat.config.js as `localhost`
-then we can run:
+    ```sh
+    yarn hardhat node
+    ```
 
-```sh
-npx hardhat run scripts/deploy.js --network localhost
-```
+    Add the network into `hardhat.config.js` as `localhost`, then you can run:
 
-20. use hardhat console, run:
+    ```sh
+    npx hardhat run scripts/deploy.js --network localhost
+    ```
 
-```sh
-yarn hardhat console --network localhost
-```
+21. Use Hardhat console, run:
 
-console can interact with different chain as scripts do
+    ```sh
+    yarn hardhat console --network localhost
+    ```
 
-21. for clean `artifacts` and `cache` folder, run:
+    The console can interact with different chains as scripts do.
 
-```sh
-yarn hardhat clean
-```
+22. To clean `artifacts` and `cache` folder, run:
 
-22. creat ./test/test-deploy.js file, run:
+    ```sh
+    yarn hardhat clean
+    ```
 
-```sh
-yarn hardhat test
-yarn hardhat test --grep store
-```
+23. Create `./test/test-deploy.js` file, run:
 
-23. hardhat gas reporter, run:
+    ```sh
+    yarn hardhat test
+    yarn hardhat test --grep store
+    ```
 
-```sh
-yarn add --dev hardhat-gas-reporter@1.0.7
-```
+24. Install Hardhat gas reporter, run:
 
-or
+    ```sh
+    yarn add --dev hardhat-gas-reporter@1.0.7
+    ```
 
-```sh
-npm install hardhat-gas-reporter@1.0.7 --save-dev
-```
+    Or
 
-add `require("hardhat-gas-reporter")` and `gasReporter` section in to `hardhat.config.js` file, here we need use coinmarketcap API key
+    ```sh
+    npm install hardhat-gas-reporter@1.0.7 --save-dev
+    ```
 
-now run:
+    Add `require("hardhat-gas-reporter")` and `gasReporter` section into `hardhat.config.js` file. Here we need to use a CoinMarketCap API key.
 
-```sh
-yarn hardhat test
-```
+    Now run:
 
-24. solidity coverage, run:
+    ```sh
+    yarn hardhat test
+    ```
 
-```sh
-npm install --save-dev solidity-coverage@0.7.18
-```
+25. Install Solidity coverage, run:
 
-or
+    ```sh
+    npm install --save-dev solidity-coverage@0.7.18
+    ```
 
-```sh
-yarn add --dev solidity-coverage@0.7.18
-```
+    Or
 
-then add `require("solidity-coverage")` into `hardhat.config.js`, run:
+    ```sh
+    yarn add --dev solidity-coverage@0.7.18
+    ```
 
-```sh
-yarn hardhat coverage
-```
+    Then add `require("solidity-coverage")` into `hardhat.config.js`, run:
+
+    ```sh
+    yarn hardhat coverage
+    ```
 
 ### Usage
 
@@ -312,17 +315,20 @@ If you use MetaMask with a local network, every time you shut down your node, yo
     You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
 
     - `PRIVATE_KEY`: The private key of your account (like from MetaMask). NOTE: FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
-    - `SEPOLIA_RPC_URL`: This is the URL of the Sepolia testnet node you're working with. You can get setup with one for free from Alchemy.
+    - `SEPOLIA_RPC_URL`: This is the URL of the Sepolia testnet node you're working with. You can get set up with one for free from Alchemy.
 
 2. **Get Testnet ETH**
 
     Head over to [faucets.chain.link](https://faucets.chain.link) and get some testnet ETH. You should see the ETH show up in your MetaMask.
 
 3. **Deploy**
+
     ```sh
     npx hardhat run scripts/deploy.js --network sepolia
     ```
-    or
+
+    Or
+
     ```sh
     yarn hardhat run scripts/deploy.js --network sepolia
     ```
@@ -350,3 +356,4 @@ Or, to fix:
 ```sh
 yarn lint:fix
 ```
+
