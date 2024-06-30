@@ -12,28 +12,33 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 **git**
 
-You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+To verify git installation, run:
+
+```sh
+git --version
+```
+
+You should see output similar to `git version x.x.x`.
 
 **Node.js**
 
-You'll know you've installed Node.js correctly if you can run:
+To verify Node.js installation, run:
 
 ```sh
 node --version
 ```
 
-and get an output like: `vx.x.x`
+You should see output similar to `vx.x.x`.
 
 **Yarn** (instead of npm)
 
-You'll know you've installed Yarn correctly if you can run:
+To verify Yarn installation, run:
 
 ```sh
 yarn --version
 ```
 
-and get an output like: `x.x.x`
-You might need to install it with npm or corepack.
+You should see output similar to `x.x.x`. Yarn might need to be installed with npm or corepack.
 
 ### Quickstart
 
@@ -87,7 +92,7 @@ You might need to install it with npm or corepack.
 
 3. Install Yarn globally:
 
-    ```bash
+    ```sh
     npm install -g yarn
     ```
 
@@ -141,7 +146,7 @@ You might need to install it with npm or corepack.
 
 11. Create `./scripts/deploy.js`.
 
-12. Run:
+12. Install Prettier and the Prettier Solidity plugin:
 
     ```sh
     yarn add --dev prettier prettier-plugin-solidity
@@ -149,15 +154,15 @@ You might need to install it with npm or corepack.
 
 13. Create `.prettierrc` and `.prettierignore`.
 
-14. To use `.env` in `hardhat.config.js` file, run:
+14. To use environment variables in the `hardhat.config.js` file, run:
 
     ```sh
     yarn add dotenv@14.2.0
     ```
 
-15. Update `hardhat.config.js` to add `require("dotenv").config()`, so it can use variables in `.env` file.
+15. Update `hardhat.config.js` to add `require("dotenv").config()`, allowing it to use variables in the `.env` file.
 
-16. Add some Hardhat tasks by running:
+16. Add Hardhat tasks:
 
     ```sh
     yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0 @nomicfoundation/hardhat-verify@2.0.3
@@ -169,9 +174,9 @@ You might need to install it with npm or corepack.
     yarn hardhat verify help
     ```
 
-    You can see `verify` task needs `verify` argument when using `run` to run the task.
+    This shows the `verify` task requires arguments when used with `run`.
 
-18. Create `./tasks/block-number.js` as your custom task, then in `hardhat.config.js` require the task.
+18. Create `./tasks/block-number.js` as a custom task, then in `hardhat.config.js`, require the task.
 
 19. Run:
 
@@ -187,7 +192,7 @@ You might need to install it with npm or corepack.
     yarn hardhat node
     ```
 
-    Add the network into `hardhat.config.js` as `localhost`, then you can run:
+    Add the network into `hardhat.config.js` as `localhost`, then run:
 
     ```sh
     npx hardhat run scripts/deploy.js --network localhost
@@ -201,20 +206,20 @@ You might need to install it with npm or corepack.
 
     The console can interact with different chains as scripts do.
 
-22. To clean `artifacts` and `cache` folder, run:
+22. To clean the `artifacts` and `cache` folders, run:
 
     ```sh
     yarn hardhat clean
     ```
 
-23. Create `./test/test-deploy.js` file, run:
+23. Create `./test/test-deploy.js`, then run:
 
     ```sh
     yarn hardhat test
     yarn hardhat test --grep store
     ```
 
-24. Install Hardhat gas reporter, run:
+24. Install Hardhat gas reporter:
 
     ```sh
     yarn add --dev hardhat-gas-reporter@1.0.7
@@ -226,7 +231,7 @@ You might need to install it with npm or corepack.
     npm install hardhat-gas-reporter@1.0.7 --save-dev
     ```
 
-    Add `require("hardhat-gas-reporter")` and `gasReporter` section into `hardhat.config.js` file. Here we need to use a CoinMarketCap API key.
+    Add `require("hardhat-gas-reporter")` and `gasReporter` section into `hardhat.config.js`. Use a CoinMarketCap API key.
 
     Now run:
 
@@ -234,7 +239,7 @@ You might need to install it with npm or corepack.
     yarn hardhat test
     ```
 
-25. Install Solidity coverage, run:
+25. Install Solidity coverage:
 
     ```sh
     npm install --save-dev solidity-coverage@0.7.18
@@ -246,7 +251,7 @@ You might need to install it with npm or corepack.
     yarn add --dev solidity-coverage@0.7.18
     ```
 
-    Then add `require("solidity-coverage")` into `hardhat.config.js`, run:
+    Add `require("solidity-coverage")` into `hardhat.config.js`, then run:
 
     ```sh
     yarn hardhat coverage
@@ -290,36 +295,36 @@ And you'll see an output file called `gas-report.txt`.
 
 #### Local Deployment
 
-If you'd like to run your own local Hardhat network, you can run:
+To run your own local Hardhat network:
 
 ```sh
 npx hardhat node
 ```
 
-And then, in a different terminal:
+In a different terminal:
 
 ```sh
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
-You should see transactions happen in your terminal that is running `npx hardhat node`.
+You should see transactions happening in the terminal running `npx hardhat node`.
 
 #### Important Localhost Note
 
-If you use MetaMask with a local network, every time you shut down your node, you'll need to reset your account: Settings -> Advanced -> Reset Account. Don't do this with a MetaMask wallet that has real funds in it.
+If you use MetaMask with a local network, every time you shut down your node, you'll need to reset your account: Settings -> Advanced -> Reset Account. Do not do this with a MetaMask wallet that has real funds in it.
 
 ### Deployment to a Testnet or Mainnet
 
 1. **Setup Environment Variables**
 
-    You'll want to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file, similar to what you see in `.env.example`.
+    Set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. Add them to a `.env` file, similar to `.env.example`.
 
-    - `PRIVATE_KEY`: The private key of your account (like from MetaMask). NOTE: FOR DEVELOPMENT, PLEASE USE A KEY THAT DOESN'T HAVE ANY REAL FUNDS ASSOCIATED WITH IT.
-    - `SEPOLIA_RPC_URL`: This is the URL of the Sepolia testnet node you're working with. You can get set up with one for free from Alchemy.
+    - `PRIVATE_KEY`: The private key of your account (like from MetaMask). **NOTE:** Use a key without any real funds for development.
+    - `SEPOLIA_RPC_URL`: The URL of the Sepolia testnet node you're working with. Get setup with one for free from Alchemy.
 
 2. **Get Testnet ETH**
 
-    Head over to [faucets.chain.link](https://faucets.chain.link) and get some testnet ETH. You should see the ETH show up in your MetaMask.
+    Visit [faucets.chain.link](https://faucets.chain.link) to get some testnet ETH. You should see the ETH show up in your MetaMask.
 
 3. **Deploy**
 
@@ -335,9 +340,9 @@ If you use MetaMask with a local network, every time you shut down your node, yo
 
 ### Verify on Etherscan
 
-If you deploy to a testnet or mainnet, you can verify it if you get an API Key from Etherscan and set it as an environment variable named `ETHERSCAN_API_KEY`. You can add it to your `.env` file as seen in the `.env.example`.
+To verify deployment on a testnet or mainnet, get an API Key from Etherscan and set it as an environment variable named `ETHERSCAN_API_KEY`. Add it to your `.env` file as seen in the `.env.example`.
 
-In its current state, if you have your API key set, it will auto-verify Sepolia contracts. However, you can manually verify with:
+If your API key is set, it will auto-verify Sepolia contracts. Manually verify with:
 
 ```sh
 npx hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
@@ -345,15 +350,14 @@ npx hardhat verify --constructor-args arguments.js DEPLOYED_CONTRACT_ADDRESS
 
 ### Linting
 
-To check linting / code formatting:
+To check linting/code formatting:
 
 ```sh
 yarn lint
 ```
 
-Or, to fix:
+To fix:
 
 ```sh
 yarn lint:fix
 ```
-
