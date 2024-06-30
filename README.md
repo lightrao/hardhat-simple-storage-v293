@@ -152,7 +152,7 @@ yarn add dotenv@14.2.0
 
 14. update hardhat.config.js add `require("dotenv").config()`, so it can use var in .env file
 
-15. run:
+15. add some hardhat task by running:
 
 ```sh
 yarn add --dev @nomiclabs/hardhat-etherscan@3.0.0
@@ -166,6 +166,18 @@ yarn add --dev solidity-coverage@0.7.18
 ```sh
 yarn hardhat verify help
 ```
+
+then we can see `verify` task need `verify` augument when use `run` to run the task
+
+17. creat ./tasks/block-number.js as our custom task, then in `hardhat.config.js` require the task
+
+18. run:
+
+```sh
+yarn hardhat block-number --network sepolia
+```
+
+note: use scripts is a good alternative to tasks
 
 ### Usage
 
